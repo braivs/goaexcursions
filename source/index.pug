@@ -1,0 +1,110 @@
+include includes/headereng
+mixin exlist(excursion_elements)
+	ul
+		each excursion_element in excursion_elements
+			li=excursion_element
+mixin ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+	.ex-container
+		.top-container
+			p
+				a(href=ex_link) !{ex_name}
+		.img-container
+			a(href=ex_link)
+				img(src=ex_img alt="")
+		.middle-container
+			+exlist(excursion_element)
+		hr
+		.bottom-container
+			.price-container #{ex_prise}
+			.button-container
+				p
+					a(href=ex_link) Learn more
+
+<!DOCTYPE html>
+html(lang="en")
+	include includes/headeng
+	body
+		div.grid-container
+			+header("indexru.html")
+			main
+				.main-grid
+					//--8--
+					-ex_name='Palolem Beach, Agonda Beach, boat trip to Butterfly Island, Fort Cabo de Rama.'
+					-ex_link ="ex08.html"
+					-ex_img="img/Ex8/mypalolemcrop.jpg"
+					-excursion_element=["Paradise beach","Boat trip","Butterfly island","and much more"]
+					-ex_prise="28$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--6--
+					-ex_name='Crab fishing, crab dinner,<br> river walk.'
+					-ex_link ="ex06.html"
+					-ex_img="img/Ex6/6crop.jpg"
+					-excursion_element=["Indian river","Water excursion","Crabs fishing","and much more"]
+					-ex_prise="28$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--7--
+					-ex_name='Boat trip to the Grand Island (Monkey Island). <br> barbecue + fishing.'
+					-ex_link ="ex07.html"
+					-ex_img="img/Ex7/1crop.jpg"
+					-excursion_element=["Boat trip to the island.","Dolphins.","Working Goan prison.","Diving.","and much more"]
+					-ex_prise="28$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--5--
+					-ex_name='Spinning fishing in the sea<br> for big fish.'
+					-ex_link ="ex05.html"
+					-ex_img="img/Ex5/mycrop.jpg"
+					-excursion_element=["Go deep into the ocean","Professional gear with reels","Bait is your choice","and much more"]
+					-ex_prise="34$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--11--
+					-ex_name='All Goa in 1 day: Waterfall, spices, elephants, old Goa, Ganesha Temple.'
+					-ex_link ="ex11.html"
+					-ex_img="img/Ex11/4crop.jpg"
+					-excursion_element=["Jungle Jeep Safari. statue of Shiva","Sacred lake","Indian Buffet.","and much more"]
+					-ex_prise="38$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--10--
+					-ex_name='Statue of Shiva (Murdeshwar), Gokarna village, Palolem beach.'
+					-ex_link ="ex10.html"
+					-ex_img="img/Ex10/5crop.jpg"
+					-excursion_element=["Highest in the world statue of Shiva","Shiva Lingam Museum.","20-floors Gopuram Tower.","and much more"]
+					-ex_prise="58$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--9--
+					-ex_name='Hampi: The Lost City'
+					-ex_link ="ex09.html"
+					-ex_img="img/Ex9/4crop.jpg"
+					-excursion_element=["Two days","Temple of the goddess Kali","Malyavant Hill.","and much more"]
+					-ex_prise="106$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--4--
+					-ex_name='Wild nest. <br> Eco-cottages in mountains.'
+					-ex_link ="ex04.html"
+					-ex_img="img/Ex4/mycrop.jpg"
+					-excursion_element=["Mountains and waterfall","Houses for 2 people","Smorgasbord","and much more"]
+					-ex_prise="108$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--3--
+					-ex_name='Mumbai City of Contrasts <br> (by sleeper bass)'
+					-ex_link ="ex03.html"
+					-ex_img="img/Ex3/mycrop.jpg"
+					-excursion_element=["Bandra District.","Mahatma Gandhi Museum","Chhattrapati Shivaji Station.","and much more"]
+					-ex_prise="166$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--1--
+					-var ex_name='Delhi, Agra, Taj Mahal<br>(by plane)'
+					-var ex_link ="ex01.html"
+					-var ex_img="img/Ex1/mycrop.jpg"
+					-var ex_prise="220$"
+					-var excursion_element=["DAY ONE - AGRA:","DAY TWO - DELHI:","Gateway to India","and much more"]
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--2--
+					//- -ex_name='Mysterious north'
+					//- -ex_link ="ex02.html"
+					//- -ex_img="img/Ex2/mycrop.jpg"
+					//- -excursion_element=["Crocodiles","The Sacred Banyan Tree","Temple of all religions","and much more"]
+					//- -ex_prise="25$ - 40$"
+					//- +ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+				include includes/specials
+				include includes/price
+			include includes/footereng

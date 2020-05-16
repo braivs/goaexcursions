@@ -1,0 +1,114 @@
+include includes/headerrus
+mixin exlist(excursion_elements)
+	ul
+		each excursion_element in excursion_elements
+			li=excursion_element
+mixin ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+	.ex-container
+		.top-container
+			p
+				a(href=ex_link) !{ex_name}
+		.img-container
+			a(href=ex_link)
+				img(src=ex_img alt="")
+		.middle-container
+			+exlist(excursion_element)
+		hr
+		.bottom-container
+			.price-container #{ex_prise}
+			.button-container
+				p
+					a(href=ex_link) Подробнее
+
+<!DOCTYPE html>
+html(lang="ru")
+	include includes/headrus
+	body
+		div.grid-container
+			+header("index.html")
+			main
+				.main-grid
+					//--8--
+					//Это южные пляжи
+					-ex_name='Пляж Палолем, пляж Агонда, прогулка на лодке на Остров бабочки, форт Кабо-де-рама'
+					-ex_link ="ex08rus.html"
+					-ex_img="img/Ex8/mypalolemcrop.jpg"
+					-excursion_element=["Райский пляж","Морская прогулка","Остров Бабочки","и многое другое"]
+					-var ex_prise="28$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--6--
+					-ex_name='Ловля крабов, ужин из крабов, речная прогулка.'
+					-ex_link ="ex06rus.html"
+					-ex_img="img/Ex6/6crop.jpg"
+					-excursion_element=["Индийская река","Водная экскурсия","Ловля крабов","и многое другое"]
+					-var ex_prise="28$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--7--
+					-ex_name='Морская прогулка на остров Гранд Айланд (Остров обезьян).<br>барбекю + рыбалка.'
+					-ex_link ="ex07rus.html"
+					-ex_img="img/Ex7/1crop.jpg"
+					-excursion_element=["Морская прогулка до острова","Дайвинг","и многое другое"]
+					-var ex_prise="28$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--5--
+					-ex_name='Спиннинговая рыбалка в море на большую рыбу.'
+					-ex_link ="ex05rus.html"
+					-ex_img="img/Ex5/mycrop.jpg"
+					-excursion_element=["Отправьтесь вглубь океана","Профессиональные снасти","Наживка – на ваш выбор.","и многое другое"]
+					-var ex_prise="34$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--11--
+					-ex_name='Весь Гоа за 1 день:<br>водопад, специи, слоны, старый гоа, Ганеша темпл.'
+					-ex_link ="ex11rus.html"
+					-ex_img="img/Ex11/4crop.jpg"
+					-excursion_element=["Джип-сафари по джунглям.","Священное озеро","Шведский стол","и многое другое"]
+					-var ex_prise="38$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--10--
+					//Хампи Бадами - 140$. Потом пришлёт. Групповые скидки.
+					-ex_name='Статуя Шивы (Мурдешвар), деревня Гокарна, пляж Палолем.'
+					-ex_link ="ex10rus.html"
+					-ex_img="img/Ex10/5crop.jpg"
+					-excursion_element=["Самая высокая в мире сидячая статуя бога Шивы.","Музей Лингама Шивы","и многое другое"]
+					-var ex_prise="58$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--9--
+					-ex_name='Хампи: затерянный город'
+					-ex_link ="ex09rus.html"
+					-ex_img="img/Ex9/4crop.jpg"
+					-excursion_element=["Два дня","Храм богини Кали","Холм Матанга","и многое другое"]
+					-var ex_prise="106$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--4--
+					-ex_name='Дикое гнездо.<br> Эко-коттеджи в горах.'
+					-ex_link ="ex04rus.html"
+					-ex_img="img/Ex4/mycrop.jpg"
+					-excursion_element=["Горы и водопад","Домики на 2 человека.","Питание – шведский стол","и многое другое"]
+					-ex_prise="108$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--3--
+					-ex_name='Мумбаи. Город контрастов<br>(на слипербасе)'
+					-ex_link ="ex03rus.html"
+					-ex_img="img/Ex3/mycrop.jpg"
+					-excursion_element=["Трущобы Кала Нагар","Музей Махатмы Ганди","Здание вокзала Чхаттрапати Шиваджи","и многое другое"]
+					-ex_prise="166$"
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--1--
+					-var ex_name='Дели, Агра, Тадж Махал<br>(на самолете)'
+					-var ex_link ="ex01rus.html"
+					-var ex_img="img/Ex1/mycrop.jpg"
+					-var ex_prise="220$"
+					-var excursion_element=["ДЕНЬ ПЕРВЫЙ - АГРА:","ДЕНЬ ВТОРОЙ - ДЕЛИ:","Ворота Индии","и многое другое"]
+					+ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					//--2--
+					//Пока цены нет, закоментирую и напомнить посмотреть
+					//- -ex_name='Таинственный север'
+					//- -ex_link ="ex02rus.html"
+					//- -ex_img="img/Ex2/mycrop.jpg"
+					//- -excursion_element=["Крокодилы","Священное дерево Баньян","Храм всех религий","и многое другое"]
+					//- -var ex_prise="25$ - 40$"
+					//- +ex-container(ex_name,ex_link,ex_img,excursion_element,ex_prise)
+					.section.promotions
+				include includes/specialsRus
+				include includes/priceRus
+			include includes/footerrus

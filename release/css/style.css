@@ -1,0 +1,334 @@
+* {
+  font-family: "Comfortaa", cursive;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+}
+body .grid-container {
+  display: grid;
+  grid-template-areas: "header" "main" "footer";
+  grid-template-columns: 100%;
+  grid-template-rows: auto 1fr auto;
+}
+
+footer .contacts p, header .main-header p {
+  padding-top: 25px;
+  text-align: center;
+  color: white;
+  font-size: 50px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+a:visited {
+  color: black;
+}
+
+header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  background: green;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-areas: "center right";
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: auto;
+  z-index: 2;
+  width: 100%;
+}
+header .main-header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: center;
+  justify-self: center;
+}
+header .main-header p a {
+  color: white;
+  color: white;
+}
+header .main-header p + p {
+  font-size: 35px;
+}
+header .main-header .img-container {
+  display: flex;
+  justify-content: center;
+}
+header .main-header .img-container img {
+  height: 50px;
+  width: auto;
+  margin-left: 15px;
+}
+header .language-selector {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: right;
+  justify-self: center;
+  width: 250px;
+  font-size: 25px;
+  line-height: 1.5em;
+}
+header .language-selector p {
+  text-align: center;
+  color: white;
+}
+header .language-selector p:nth-of-type(2), header .language-selector p:nth-of-type(3) {
+  border: 1px solid white;
+  border-radius: 25px;
+  padding: 5px;
+}
+header .language-selector p:nth-of-type(2).selected, header .language-selector p:nth-of-type(3).selected {
+  color: black;
+  background: white;
+}
+
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: main;
+  border-left: 5px solid green;
+  border-right: 5px solid green;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+main .main-grid {
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, 750px);
+  grid-gap: 5px;
+}
+main .main-grid .ex-container {
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+}
+main .main-grid .ex-container .top-container {
+  height: 150px;
+}
+main .main-grid .ex-container .top-container p {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 30px 0 0 0;
+  text-align: center;
+}
+main .main-grid .ex-container .img-container {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+main .main-grid .ex-container .middle-container {
+  height: 170px;
+  padding: 0 5px 0 5px;
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+}
+main .main-grid .ex-container .middle-container ul {
+  list-style-position: inside;
+}
+main .main-grid .ex-container .bottom-container {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+main .main-grid .ex-container .bottom-container .price-container {
+  text-align: center;
+  font-size: 25px;
+}
+main .main-grid .ex-container .bottom-container .button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 200px;
+  border: 1px solid green;
+  margin: 0 auto;
+  background: green;
+  border-radius: 50px;
+}
+main .main-grid .ex-container .bottom-container .button-container a {
+  color: white;
+  font-size: 25px;
+}
+main .ex-description {
+  max-width: 100%;
+}
+main .ex-description .ex-description-top h1 {
+  margin: 10px 0;
+  text-align: center;
+}
+main .ex-description .owl-carousel img {
+  height: auto;
+  width: auto;
+}
+main .ex-description p {
+  font-size: 25px;
+  padding-top: 20px;
+  text-align: left;
+}
+main section.specials h1 {
+  margin-top: 20px;
+}
+main section.specials h1, main section.specials p {
+  font-size: 32px;
+  text-align: center;
+  color: green;
+}
+main section.price .bitcoin {
+  margin-top: 10px;
+}
+main section.price .bitcoin span {
+  color: #BD8913;
+  font-size: 25px;
+}
+main section.price .bitcoin .bitcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+main section.price .bitcoin .bitcontainer img {
+  margin: 10px;
+  max-height: 200px;
+}
+
+footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: footer;
+  background: green;
+  display: flex;
+  justify-content: center;
+}
+footer .contacts {
+  margin-bottom: 20px;
+}
+footer .contacts p {
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1600px) {
+  main .main-grid {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(4, 750px);
+  }
+}
+@media screen and (max-width: 1425px) {
+  main .main-grid .ex-container .top-container p {
+    font-size: 22px;
+  }
+  main .main-grid .ex-container .middle-container {
+    font-size: 22px;
+  }
+  main .main-grid .ex-container .bottom-container .price-container {
+    font-size: 22px;
+  }
+  main .main-grid .ex-container .bottom-container .button-container p a {
+    font-size: 27px;
+  }
+}
+@media screen and (max-width: 1276px) {
+  main .main-grid {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(5, 750px);
+  }
+  main .main-grid .ex-container .top-container p {
+    font-size: 28px;
+  }
+  main .main-grid .ex-container .middle-container {
+    font-size: 28px;
+  }
+  main .main-grid .ex-container .bottom-container .price-container {
+    font-size: 28px;
+  }
+  main .main-grid .ex-container .bottom-container .button-container p a {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 975px) {
+  main .main-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 750px);
+  }
+  main .main-grid .ex-container .top-container p {
+    font-size: 28px;
+  }
+  main .main-grid .ex-container .middle-container {
+    font-size: 28px;
+  }
+  main .main-grid .ex-container .bottom-container .price-container {
+    font-size: 28px;
+  }
+  main .main-grid .ex-container .bottom-container .button-container p a {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width: 750px) {
+  header .main-header p, footer .contacts p {
+    font-size: 40px;
+  }
+
+  main .main-grid .ex-container .top-container p {
+    font-size: 30px;
+  }
+  main .main-grid .ex-container .middle-container {
+    font-size: 30px;
+  }
+  main .main-grid .ex-container .bottom-container .price-container {
+    font-size: 30px;
+  }
+  main .main-grid .ex-container .bottom-container .button-container p a {
+    font-size: 28px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  header .main-header p + p {
+    font-size: 30px;
+  }
+
+  footer {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+  }
+  footer .contacts p {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 565px) {
+  main .main-grid .ex-container .top-container p {
+    font-size: 25px;
+  }
+  main .main-grid .ex-container .middle-container {
+    font-size: 25px;
+  }
+  main .main-grid .ex-container .bottom-container .price-container {
+    font-size: 25px;
+  }
+  main .main-grid .ex-container .bottom-container .button-container p a {
+    font-size: 25px;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+  }
+  header .main-header p + p {
+    font-size: 25px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
